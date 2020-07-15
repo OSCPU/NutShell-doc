@@ -1,6 +1,6 @@
 # NutShell 文档
 
-目前该 repo 已经和 gitbook.io 绑定，域名为 https://oscpu.gitbook.io/nutshell/，大家做出修改后能立马在网站上看到变化
+目前该 repo 已经和 gitbook.io 绑定，域名为 https://oscpu.gitbook.io/nutshell/ ，大家做出修改后能立马在网站上看到变化
 
 
 

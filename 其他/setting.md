@@ -4,7 +4,7 @@ NutShell 支持参数化配置，目前经过验证的核心配置集有小核�
 
 
 
-![](setting.svg)
+<img src="setting.svg" width="300" />
 
 
 

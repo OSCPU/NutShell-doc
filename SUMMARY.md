@@ -29,8 +29,8 @@
 
 ### 系统设计
 
-* [访存](系统/mem.md)
-* [外设](系统/peripheral.md)
+* [访存系统](系统/mem.md)
+* [外设系统](系统/peripheral.md)
 * [总线](系统/bus.md)
 
 ----

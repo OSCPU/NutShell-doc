@@ -4,7 +4,7 @@ NutShell 的访存模型示意图如下所示：
 
 
 
-![访存](mem-model.svg)
+![](mem-model.svg)
 
 
 

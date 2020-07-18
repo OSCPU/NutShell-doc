@@ -1,0 +1,512 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>NutShell (果壳) 处理器核 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="上手教程/NutShell-tutorial.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">介绍</li>
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    NutShell (果壳) 处理器核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="上手教程/NutShell-tutorial.html">
+            
+                <a href="上手教程/NutShell-tutorial.html">
+            
+                    
+                    快速上手教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">流水线设计细节</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="流水线/ifu.html">
+            
+                <a href="流水线/ifu.html">
+            
+                    
+                    取指级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="流水线/idu.html">
+            
+                <a href="流水线/idu.html">
+            
+                    
+                    译码级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="流水线/isu.html">
+            
+                <a href="流水线/isu.html">
+            
+                    
+                    发射级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="流水线/exu.html">
+            
+                <a href="流水线/exu.html">
+            
+                    
+                    执行级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="流水线/wbu.html">
+            
+                <a href="流水线/wbu.html">
+            
+                    
+                    写回级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">功能部件设计细节</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="功能部件/lsu.md">
+            
+                <span>
+            
+                    
+                    访存单元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="功能部件/csr.md">
+            
+                <span>
+            
+                    
+                    CSR单元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="功能部件/bpu.md">
+            
+                <span>
+            
+                    
+                    分支预测单元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="功能部件/cache.html">
+            
+                <a href="功能部件/cache.html">
+            
+                    
+                    Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="功能部件/tlb.md">
+            
+                <span>
+            
+                    
+                    TLB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">系统设计</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="系统/mem.html">
+            
+                <a href="系统/mem.html">
+            
+                    
+                    访存系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="系统/peripheral.html">
+            
+                <a href="系统/peripheral.html">
+            
+                    
+                    外设系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="系统/bus.html">
+            
+                <a href="系统/bus.html">
+            
+                    
+                    总线
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="其他/env.html">
+            
+                <a href="其他/env.html">
+            
+                    
+                    配套生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="其他/setting.html">
+            
+                <a href="其他/setting.html">
+            
+                    
+                    参数化配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="其他/debug.html">
+            
+                <a href="其他/debug.html">
+            
+                    
+                    调试指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >NutShell (果壳) 处理器核</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="nutshell-&#x6587;&#x6863;">NutShell &#x6587;&#x6863;</h1>
+<p>&#x76EE;&#x524D;&#x8BE5; repo &#x5DF2;&#x7ECF;&#x548C; gitbook.io &#x7ED1;&#x5B9A;&#xFF0C;&#x57DF;&#x540D;&#x4E3A; <a href="https://oscpu.gitbook.io/nutshell/" target="_blank">https://oscpu.gitbook.io/nutshell/</a> </p>
+<h3 id="&#x6587;&#x6863;&#x6B63;&#x5728;&#x64B0;&#x5199;&#x4E2D;-&#x656C;&#x8BF7;&#x671F;&#x5F85;&#xFF01;">&#x6587;&#x6863;&#x6B63;&#x5728;&#x64B0;&#x5199;&#x4E2D;.... &#x656C;&#x8BF7;&#x671F;&#x5F85;&#xFF01;</h3>
+<h2 id="&#x6587;&#x6863;&#x7F16;&#x5199;&#x89C4;&#x8303;">&#x6587;&#x6863;&#x7F16;&#x5199;&#x89C4;&#x8303;</h2>
+<ol>
+<li><p>&#x6587;&#x6863;&#x683C;&#x5F0F;&#x662F; Markdown&#xFF0C;&#x4F7F;&#x7528;&#x4E2D;&#x6587;&#x7F16;&#x5199;&#xFF0C;&#x53EF;&#x5939;&#x6742;&#x82F1;&#x6587;&#xFF1B;&#x5728;&#x4F7F;&#x7528;&#x82F1;&#x6587;&#x7684;&#x7F29;&#x5199;&#x524D;&#xFF0C;&#x4FDD;&#x8BC1;&#x672C;&#x9875;&#x9762;&#x6216;&#x76F8;&#x8FD1;&#x9875;&#x9762;&#x51FA;&#x73B0;&#x8FC7;&#x5BF9;&#x5E94;&#x7684;&#x5168;&#x79F0;&#x89E3;&#x91CA;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code>&#x6211;&#x4EEC;&#x7684;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;&#x4F7F;&#x7528;&#x4E86;&#x5206;&#x652F;&#x76EE;&#x6807;&#x7F13;&#x51B2;&#x5668;(Branch Target Buffer&#xFF0C;BTB)&#x8FD9;&#x4E00;&#x7ED3;&#x6784;, ......
+......
+&#x76EE;&#x524D; BTB &#x4E2D;&#x5305;&#x542B;&#x4E86; ......
+</code></pre></li>
+<li><p>&#x8BF4;&#x660E;&#x7ED3;&#x6784;&#x7684;&#x65F6;&#x5019;&#x5C3D;&#x91CF;&#x914D;&#x56FE;&#xFF0C;&#x5982;&#x679C;&#x5ACC;&#x9EBB;&#x70E6;&#x7684;&#x8BDD;&#x53EF;&#x4EE5;&#x624B;&#x753B;&#x4E00;&#x5F20;&#x8349;&#x56FE;&#x4F20;&#x4E0A;&#x53BB;&#x7136;&#x540E; &#x540E;&#x7EED;&#x4F7F;&#x7528;&#x8F6F;&#x4EF6;&#x753B;&#x51FA;&#x6765;&#x505A;&#x6DA6;&#x8272;</p>
+</li>
+<li><p>&#x5199;&#x7684;&#x65F6;&#x5019;&#x8981;&#x8BB0;&#x4F4F;&#x6587;&#x6863;&#x7ED9;&#x9762;&#x5411;&#x5927;&#x4F17;&#xFF0C;&#x6240;&#x4EE5;&#x591A;&#x5199;&#x4E00;&#x4E9B;&#x603B;&#x89C8;&#x6846;&#x67B6;&#xFF0C;&#x4E0D;&#x5FC5;&#x62D8;&#x6CE5;&#x4E8E;&#x7C7B;&#x4F3C;&#x4FE1;&#x53F7;&#x7684;&#x542B;&#x4E49;&#x8FD9;&#x6837;&#x7684;&#x7EC6;&#x8282;</p>
+</li>
+</ol>
+<h2 id="todo-list">TODO List</h2>
+<p><code>&#x6D41;&#x6C34;&#x7EBF;&#xFF1A;</code></p>
+<p>&#x603B;&#x89C8;</p>
+<p>IFU</p>
+<p>IDU</p>
+<p>ISU</p>
+<p>EXU</p>
+<p>WBU</p>
+<p><code>&#x529F;&#x80FD;&#x90E8;&#x4EF6;&#xFF1A;</code></p>
+<p>LSU</p>
+<p>CSR</p>
+<p>Cache ---- &#x5F85;&#x8865;&#x5145;</p>
+<p>TLB</p>
+<p>BPU</p>
+<p><code>&#x5916;&#x56F4;&#x90E8;&#x4EF6;</code></p>
+<p>&#x8BBF;&#x5B58;&#x7CFB;&#x7EDF; ---- &#x5F85;&#x8865;&#x5145;</p>
+<p>&#x5916;&#x8BBE;&#x7CFB;&#x7EDF; ---- &#x5F85;&#x8865;&#x5145;</p>
+<p>&#x603B;&#x7EBF; ---- &#x5F85;&#x8865;&#x5145;</p>
+<p><code>&#x5176;&#x4ED6;</code></p>
+<p>&#x914D;&#x5957;&#x751F;&#x6001; ---- &#x5F85;&#x8865;&#x5145;</p>
+<p>&#x53C2;&#x6570;&#x5316;&#x914D;&#x7F6E; ---- &#x521D;&#x7A3F;</p>
+<p>&#x8C03;&#x8BD5;&#x6307;&#x5357; ---- &#x521D;&#x7A3F;</p>
+<p>&#x4E0A;&#x624B;&#x6559;&#x7A0B; ---- &#x521D;&#x7A3F;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="上手教程/NutShell-tutorial.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 快速上手教程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"NutShell (果壳) 处理器核","level":"1.1","depth":1,"next":{"title":"快速上手教程","level":"1.2","depth":1,"path":"上手教程/NutShell-tutorial.md","ref":"上手教程/NutShell-tutorial.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-07-18T08:02:12.012Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-18T08:04:27.765Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

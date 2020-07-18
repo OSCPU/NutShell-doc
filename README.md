@@ -2,6 +2,8 @@
 
 目前该 repo 已经和 github.io 绑定，域名为 https://oscpu.github.io/NutShell-doc/
 
+文档改写完成后，请运行 `gitbook build ./ ./building` 生成网页
+
 ### 文档正在撰写中.... 敬请期待！
 
 

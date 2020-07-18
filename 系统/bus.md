@@ -1,14 +1,31 @@
 # 总线
 
-我们使用 SimpleBus 作为 NutCore 的访存总线，这是专门为本项目设计的一套简单总线.
+我们使用 SimpleBus 作为 NutCore 的访存总线，这是专门为本项目设计的一套最小满足需求功能总线.
 
 
 
 ## SimpleBusUC
 
-SimpleBusUC 是 SimpleBus 的最基本实现，用于非 Cache 的访存通路中，它包含了 req 和 resp 两个通路，信号细节如下：
+SimpleBusUC 是 SimpleBus 的最基本实现，用于非 Cache 的访存通路中，它包含了 req 和 resp 两个通路，使用 Decoupled 方式握手，信号细节如下：
+
+| req 信号名称 | 位宽       | 注释                                                  |
+| :----------- | ---------- | ----------------------------------------------------- |
+| req.addr     | AddrBits   | 访存地址（位宽与体系结构实现相关）                    |
+| req.size     | 3          | 访存大小（访存Byte = 2^(req.size)）                   |
+| req.cmd      | 4          | 访存指令，详见 SimpleBus.scala 中 SimpleBusCmd 的实现 |
+| req.wdata    | DataBits   | 内存写数据（位宽与体系结构实现相关）                  |
+| req.wmask    | DataBits/8 | 内存写掩码                                            |
+| req.user     | UserBits   | 用户自定义数据，在访存过程中不被修改                  |
+| req.id       | IdBits     | [TODO]                                                |
 
 
+
+| resp 信号名称 | 位宽     | 注释                                 |
+| ------------- | -------- | ------------------------------------ |
+| resp.cmd      | 4        | 访存状态回复                         |
+| resp.rdata    | DataBits | 访存读数据                           |
+| resp.user     | UserBits | 用户自定义数据，在访存过程中不被修改 |
+| resp.id       | IdBits   | [TODO]                               |
 
 我们也内置了基于 SimpleBusUC 的各类 CrossBar，经过了一定的验证，方便开发者进行复用.
 
@@ -17,6 +34,15 @@ SimpleBusUC 是 SimpleBus 的最基本实现，用于非 Cache 的访存通路�
 ## SimpleBusC
 
 SimpleBusC 在 SimpleBusUC 的基础上增加了与一致性相关的功能，用于 Cache 的访存通路中，本质上是由两个 SimpleBusUC 组合而成的：
+
+```
+class SimpleBusC(val userBits: Int = 0) extends SimpleBusBundle {
+  val mem = new SimpleBusUC(userBits)
+  val coh = Flipped(new SimpleBusUC(userBits))
+}
+```
+
+其中 mem 是访存通道，coh 是一致性维护通道.
 
 
 

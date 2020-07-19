@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>外设系统 · GitBook</title>
+        <title>TLB · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="bus.html" />
+    <link rel="next" href="../系统/mem.html" />
     
     
-    <link rel="prev" href="mem.html" />
+    <link rel="prev" href="cache.html" />
     
 
     </head>
@@ -214,7 +214,7 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../功能部件/lsu.md">
+        <li class="chapter " data-level="4.1" data-path="lsu.md">
             
                 <span>
             
@@ -227,7 +227,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../功能部件/csr.md">
+        <li class="chapter " data-level="4.2" data-path="csr.md">
             
                 <span>
             
@@ -240,9 +240,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../功能部件/bpu.html">
+        <li class="chapter " data-level="4.3" data-path="bpu.html">
             
-                <a href="../功能部件/bpu.html">
+                <a href="bpu.html">
             
                     
                     分支预测单元
@@ -253,9 +253,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../功能部件/cache.html">
+        <li class="chapter " data-level="4.4" data-path="cache.html">
             
-                <a href="../功能部件/cache.html">
+                <a href="cache.html">
             
                     
                     Cache
@@ -266,9 +266,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="../功能部件/tlb.html">
+        <li class="chapter active" data-level="4.5" data-path="tlb.html">
             
-                <a href="../功能部件/tlb.html">
+                <a href="tlb.html">
             
                     
                     TLB
@@ -286,9 +286,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="mem.html">
+        <li class="chapter " data-level="5.1" data-path="../系统/mem.html">
             
-                <a href="mem.html">
+                <a href="../系统/mem.html">
             
                     
                     访存系统
@@ -299,9 +299,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.2" data-path="peripheral.html">
+        <li class="chapter " data-level="5.2" data-path="../系统/peripheral.html">
             
-                <a href="peripheral.html">
+                <a href="../系统/peripheral.html">
             
                     
                     外设系统
@@ -312,9 +312,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="bus.html">
+        <li class="chapter " data-level="5.3" data-path="../系统/bus.html">
             
-                <a href="bus.html">
+                <a href="../系统/bus.html">
             
                     
                     总线
@@ -401,7 +401,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >外设系统</a>
+        <a href=".." >TLB</a>
     </h1>
 </div>
 
@@ -416,11 +416,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5916;&#x8BBE;&#x7CFB;&#x7EDF;">&#x5916;&#x8BBE;&#x7CFB;&#x7EDF;</h1>
-<p>&#x672C;&#x8282;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD; NutShell &#x6240;&#x4F7F;&#x7528;&#x7684;&#x5916;&#x8BBE;&#x7CFB;&#x7EDF;. &#x7531;&#x4E8E;&#x5B9E;&#x73B0;&#x7684;&#x539F;&#x56E0;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4EFF;&#x771F;&#x548C;&#x6D41;&#x7247;&#x7248;&#x672C;&#x4F7F;&#x7528;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x5916;&#x8BBE;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x4E2D;&#x4EFF;&#x771F;&#x5916;&#x8BBE;&#x793A;&#x610F;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="mmio.svg" alt=""></p>
-<p>&#x6D41;&#x7247;&#x5916;&#x8BBE;&#x793A;&#x610F;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p><img src="peripheral-real.svg" alt=""></p>
+                                <h1 id="tlb">TLB</h1>
+<p>NutShell &#x652F;&#x6301; Sv39 &#x5206;&#x9875;&#x65B9;&#x6848;&#x548C;&#x865A;&#x5B9E;&#x5730;&#x5740;&#x8F6C;&#x6362;&#xFF0C;&#x56E0;&#x6B64;&#x9875;&#x8868;&#x7F13;&#x51B2;&#xFF08;TLB&#xFF09;&#x662F;&#x5904;&#x7406;&#x5668;&#x7684;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x90E8;&#x4EF6;&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x5F97;&#x597D;&#x574F;&#x76F4;&#x63A5;&#x51B3;&#x5B9A;&#x4E86;&#x5730;&#x5740;&#x8F6C;&#x6362;&#x7684;&#x6027;&#x80FD;. </p>
+<p>NutShell &#x5305;&#x542B;&#x4E00;&#x4E2A; 4 &#x9879; 4 &#x8DEF;&#x7EC4;&#x76F8;&#x8FDE;&#x7684;&#x6307;&#x4EE4;&#x9875;&#x8868;&#x7F13;&#x51B2;&#xFF08;ITLB&#xFF09;&#x548C;&#x4E00;&#x4E2A; 64 &#x9879; 4 &#x8DEF;&#x7EC4;&#x76F8;&#x8FDE;&#x7684;&#x6570;&#x636E;&#x9875;&#x8868;&#x7F13;&#x51B2;&#xFF08;DTLB&#xFF09;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x7ED3;&#x6784;&#x56FE;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="tlb.svg" alt=""></p>
+<p>[TODO]</p>
 
                                 
                                 </section>
@@ -448,12 +448,12 @@
 
             
                 
-                <a href="mem.html" class="navigation navigation-prev " aria-label="Previous page: 访存系统">
+                <a href="cache.html" class="navigation navigation-prev " aria-label="Previous page: Cache">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="bus.html" class="navigation navigation-next " aria-label="Next page: 总线">
+                <a href="../系统/mem.html" class="navigation navigation-next " aria-label="Next page: 访存系统">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -464,7 +464,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"外设系统","level":"5.2","depth":1,"next":{"title":"总线","level":"5.3","depth":1,"path":"系统/bus.md","ref":"系统/bus.md","articles":[]},"previous":{"title":"访存系统","level":"5.1","depth":1,"path":"系统/mem.md","ref":"系统/mem.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"系统/peripheral.md","mtime":"2020-07-18T08:02:12.017Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-19T09:53:04.047Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TLB","level":"4.5","depth":1,"next":{"title":"访存系统","level":"5.1","depth":1,"path":"系统/mem.md","ref":"系统/mem.md","articles":[]},"previous":{"title":"Cache","level":"4.4","depth":1,"path":"功能部件/cache.md","ref":"功能部件/cache.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"功能部件/tlb.md","mtime":"2020-07-19T09:52:46.576Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-19T09:53:04.047Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

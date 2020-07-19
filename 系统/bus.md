@@ -1,8 +1,8 @@
 # 总线
 
-我们使用 SimpleBus 作为 NutCore 的访存总线，这是专门为本项目设计的一套最小满足需求功能总线.
+我们使用 SimpleBus 作为 NutCore 的访存总线，它的设计借鉴了 AMBA, TileLink 等总线的思想，根据我们的需求加入了一定的功能，是专门为本项目设计的一套最小满足功能需求的总线.
 
-
+目前，SimpleBus 有两个实现层级，分别是 SimpleBusUC 和 SimpleBusC.
 
 ## SimpleBusUC
 

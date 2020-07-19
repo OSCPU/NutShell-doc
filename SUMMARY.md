@@ -1,9 +1,11 @@
 # NutShell
 
+* [README](README.md)
+
 ### 介绍
 
-* [NutShell (果壳) 处理器核](README.md)
-* [快速上手教程](上手教程/NutShell-tutorial.md)
+* [NutShell (果壳) 处理器核](介绍/introduction.md)
+* [快速上手教程](介绍/NutShell-tutorial.md)
 
 ----
 

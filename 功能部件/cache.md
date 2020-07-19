@@ -21,13 +21,7 @@ Cache模块可以分为存储部分(Cache Array)和控制逻辑部分(control lo
 
 ### 3. 控制逻辑
 <p style="text-indent:2em">
-Cache的控制逻辑是一个三级流水线的结构。阶段1(Stage 1)接收来自NutCore或者其它Cache的访存请求，这个访存请求的信息通过SimpleBus总线传递。同时进行地址划分，截取访存地址的索引并向Cache Array的读请求，读取这个索引对应的Cache组。在下一拍返回数据。 
-</p> 
-<p style="text-indent:2em">
-阶段2(Stage 2)得到上一级流水线传递过来的访存请求信息，以及Cache Array返回的数据。在这一阶段进行命中检查：截取访存地址的标签，并与该Cache组四路的tag进行比较。命中则会生成Cache hit信号传递给阶段3。否则发送Cache miss信号，并随机指定该组中的受害者Cache行(victim cacheline)以做Cache替换用。  
-</p>
-<p style="text-indent:2em">
-阶段3(Stage 3)根据阶段2的结果进行不同的处理：  
+Cache的控制逻辑是一个三级流水线的结构。阶段1(Stage 1)接收来自NutCore或者其它Cache的访存请求，这个访存请求的信息通过SimpleBus总线传递。同时进行地址划分，截取访存地址的索引并向Cache Array的读请求，读取这个索引对应的Cache组。在下一拍返回数据。阶段2(Stage 2)得到上一级流水线传递过来的访存请求信息，以及Cache Array返回的数据。在这一阶段进行命中检查：截取访存地址的标签，并与该Cache组四路的tag进行比较。命中则会生成Cache hit信号传递给阶段3。否则发送Cache miss信号，并随机指定该组中的受害者Cache行(victim cacheline)以做Cache替换用。阶段3(Stage 3)根据阶段2的结果进行不同的处理：  
 
 * Cache hit:读指令(load)直接返回数据，写指令(store)发送对Cache Array的写请求(hit write)。写的内容包括写入的数据(通过写掩码选择的写数据和命中的原始数据进行拼接)，以及将该Cache行的脏位置1表示该Cache行的数据被改写过。  
 

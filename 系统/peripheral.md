@@ -20,15 +20,11 @@ NutShell SoC主要由NutCore处理器以及各个外设IP核，以及SDRAM控制
 ## 外设
 我们的外设IP来源于opencore这样的开源网站
 
-### UART
-UART（Universal Asynchronous Receiver/Transmitter），用于NutCore对串口的输入输出
-### GPIO
-GPIO（General-purpose input/output）,我们使用4个GPIO输入端口作为我们的中断输入端口，连接到各个外设IP的中断信号。当外设产生中断时，会使能GPIO中断并向NutCore处理器发送中断。
-### SPI_Flash
-我们使用SPI（Serial Peripheral Interface）信号端口的Flash来作为我们的ROM，NutCore会从SPI_Flash中读取第一条指令。
-### ETHMAC
-
-### SDC
+* UART（Universal Asynchronous Receiver/Transmitter），用于NutCore对串口的输入输出。
+* GPIO（General-purpose input/output）,我们使用4个GPIO输入端口作为我们的中断输入端口，连接到各个外设IP的中断信号。当外设产生中断时，会使能GPIO中断并向NutCore处理器发送中断。
+* SPI_Flash 我们使用SPI（Serial Peripheral Interface）信号端口的Flash来作为我们的ROM，NutCore会从SPI_Flash中读取第一条指令。
+* ETHMAC 以太网控制器，SoC通过Tx端发送以太网帧。而当Rx接收到数据时，会作为APB master向NutCore发送AXI-fronten写请求写入DMA接收地址。
+* SDC 已经流片的板子上我们实现了SDHC(Secure Digital High Capacity)以及SPI两种接口的SDC controller
 
 
 

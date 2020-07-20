@@ -417,7 +417,30 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8BD1;&#x7801;&#x7EA7;">&#x8BD1;&#x7801;&#x7EA7;</h1>
+<p>&#x8BD1;&#x7801; (Decode) &#x9636;&#x6BB5;&#x63A5;&#x6536;&#x6307;&#x4EE4;&#x5BF9;&#x9F50;&#x7F13;&#x51B2;&#x7ED9;&#x51FA;&#x7684;&#x6307;&#x4EE4;&#x8FDB;&#x884C;&#x8BD1;&#x7801;&#x3002;&#x8BD1;&#x7801;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x6682;&#x5B58;&#x5230;&#x8BD1;&#x7801;&#x7ED3;&#x679C;&#x7F13;&#x51B2;&#x533A;&#x4E2D;&#xFF0C;&#x7B49;&#x5F85;&#x8FDB;&#x5165;&#x5904;&#x7406;&#x5668;&#x540E;&#x7AEF;&#x6267;&#x884C;&#x90E8;&#x5206;.</p>
+<p>&#x8BD1;&#x7801;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#x4E86;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301; I, M, A, C, Zicsr, Zifencei &#x7B49;&#x6269;&#x5C55;&#xFF0C;&#x6700;&#x7EC8;&#x83B7;&#x5F97;&#x89C4;&#x5219;&#x5316;&#x7684;&#x8BD1;&#x7801;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>class CtrlSignalIO extends NutCoreBundle {
+  val src1Type = Output(SrcType())
+  val src2Type = Output(SrcType())
+  val fuType = Output(FuType())
+  val fuOpType = Output(FuOpType())
+  val rfSrc1 = Output(UInt(5.W))
+  val rfSrc2 = Output(UInt(5.W))
+  val rfWen = Output(Bool())
+  val rfDest = Output(UInt(5.W))
+  val isNutCoreTrap = Output(Bool())
+  val isSrc1Forward = Output(Bool())
+  val isSrc2Forward = Output(Bool())
+  val noSpecExec = Output(Bool())  // This inst can not be speculated
+  val isBlocked = Output(Bool())   // This inst requires pipeline to be blocked
+}
 
+class DataSrcIO extends NutCoreBundle {
+  val src1 = Output(UInt(XLEN.W))
+  val src2 = Output(UInt(XLEN.W))
+  val imm  = Output(UInt(XLEN.W))
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -460,7 +483,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"译码级","level":"3.2","depth":1,"next":{"title":"发射级","level":"3.3","depth":1,"path":"流水线/isu.md","ref":"流水线/isu.md","articles":[]},"previous":{"title":"取指级","level":"3.1","depth":1,"path":"流水线/ifu.md","ref":"流水线/ifu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"流水线/idu.md","mtime":"2020-07-18T08:02:12.016Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-20T01:37:01.759Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"译码级","level":"3.2","depth":1,"next":{"title":"发射级","level":"3.3","depth":1,"path":"流水线/isu.md","ref":"流水线/isu.md","articles":[]},"previous":{"title":"取指级","level":"3.1","depth":1,"path":"流水线/ifu.md","ref":"流水线/ifu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"流水线/idu.md","mtime":"2020-07-20T02:59:32.874Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-20T02:59:44.047Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

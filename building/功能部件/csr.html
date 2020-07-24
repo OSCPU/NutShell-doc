@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>参数化配置 · GitBook</title>
+        <title>CSR单元 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="debug.html" />
+    <link rel="next" href="bpu.html" />
     
     
-    <link rel="prev" href="env.html" />
+    <link rel="prev" href="lsu.md" />
     
 
     </head>
@@ -214,7 +214,7 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../功能部件/lsu.md">
+        <li class="chapter " data-level="4.1" data-path="lsu.md">
             
                 <span>
             
@@ -227,9 +227,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../功能部件/csr.html">
+        <li class="chapter active" data-level="4.2" data-path="csr.html">
             
-                <a href="../功能部件/csr.html">
+                <a href="csr.html">
             
                     
                     CSR单元
@@ -240,9 +240,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../功能部件/bpu.html">
+        <li class="chapter " data-level="4.3" data-path="bpu.html">
             
-                <a href="../功能部件/bpu.html">
+                <a href="bpu.html">
             
                     
                     分支预测单元
@@ -253,9 +253,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../功能部件/cache.html">
+        <li class="chapter " data-level="4.4" data-path="cache.html">
             
-                <a href="../功能部件/cache.html">
+                <a href="cache.html">
             
                     
                     Cache
@@ -266,9 +266,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="../功能部件/tlb.html">
+        <li class="chapter " data-level="4.5" data-path="tlb.html">
             
-                <a href="../功能部件/tlb.html">
+                <a href="tlb.html">
             
                     
                     TLB
@@ -332,9 +332,9 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="env.html">
+        <li class="chapter " data-level="6.1" data-path="../其他/env.html">
             
-                <a href="env.html">
+                <a href="../其他/env.html">
             
                     
                     配套生态
@@ -345,9 +345,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.2" data-path="setting.html">
+        <li class="chapter " data-level="6.2" data-path="../其他/setting.html">
             
-                <a href="setting.html">
+                <a href="../其他/setting.html">
             
                     
                     参数化配置
@@ -358,9 +358,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.3" data-path="debug.html">
+        <li class="chapter " data-level="6.3" data-path="../其他/debug.html">
             
-                <a href="debug.html">
+                <a href="../其他/debug.html">
             
                     
                     调试指南
@@ -401,7 +401,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >参数化配置</a>
+        <a href=".." >CSR单元</a>
     </h1>
 </div>
 
@@ -416,44 +416,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x53C2;&#x6570;&#x5316;&#x914D;&#x7F6E;">&#x53C2;&#x6570;&#x5316;&#x914D;&#x7F6E;</h1>
-<p>NutShell &#x652F;&#x6301;&#x53C2;&#x6570;&#x5316;&#x914D;&#x7F6E;&#xFF0C;&#x76EE;&#x524D;&#x7ECF;&#x8FC7;&#x9A8C;&#x8BC1;&#x7684;&#x6838;&#x5FC3;&#x914D;&#x7F6E;&#x96C6;&#x6709;&#x5C0F;&#x6838;&#x3001;&#x987A;&#x5E8F;&#x6838;&#x3001;&#x4E71;&#x5E8F;&#x6838;&#xFF0C;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x96C6;&#x6709;&#x4EFF;&#x771F;&#xFF0C;FPGA (&#x652F;&#x6301; pynq &#x548C; axu3cg)&#xFF0C;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x96C6;&#x5DF2;&#x7ECF;&#x9884;&#x8BBE;&#x5728;&#x4EE3;&#x7801;&#x4E2D;.</p>
-<p><img src="setting.svg" width="300"></p>
-<p>&#x5728; <code>src/main/scala/top/Settings.scala</code> &#x4E2D;&#x7ED9;&#x51FA;&#x4E86;&#x76EE;&#x524D;&#x652F;&#x6301;&#x53EF;&#x914D;&#x7F6E;&#x7684;&#x5404;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x622A;&#x53D6;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x6240;&#x793A;:</p>
-<pre><code>object DefaultSettings {
-  def apply() = Map(
-    &quot;MemMapBase&quot; -&gt; 0x0000000000000000L,
-    &quot;MemMapRegionBits&quot; -&gt; 0,
-    &quot;MMIOBase&quot; -&gt; 0x0000000040000000L,
-    &quot;MMIOSize&quot; -&gt; 0x0000000040000000L,
-    &quot;ResetVector&quot; -&gt; 0x80000000L,
-    &quot;NrExtIntr&quot; -&gt; 1,
-
-    &quot;HasL2cache&quot; -&gt; true,
-    &quot;HasPrefetch&quot; -&gt; true,
-    &quot;EnableMultiIssue&quot; -&gt; false,
-    &quot;EnableSuperScalarExec&quot; -&gt; false,
-    &quot;EnableOutOfOrderExec&quot; -&gt; false,
-    &quot;HasDTLB&quot; -&gt; true,
-    &quot;HasITLB&quot; -&gt; true,
-    &quot;HasDcache&quot; -&gt; true,
-    &quot;HasIcache&quot; -&gt; true,
-    &quot;MmodeOnly&quot; -&gt; false,
-    &quot;IsRV32&quot; -&gt; false,
-
-    &quot;EnableILA&quot; -&gt; true,
-    &quot;EnableDebug&quot; -&gt; false,
-    &quot;EnableRVC&quot; -&gt; true,
-    &quot;EnableCoh&quot; -&gt; true,
-    &quot;SDIMem&quot; -&gt; false
-  )
-}
-</code></pre><p>&#x5728;&#x5DE5;&#x7A0B;&#x7684; Makefile &#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>CORE</code> &#x548C;  <code>BOARD</code> &#x6307;&#x5B9A;&#x751F;&#x6210;&#x7684;&#x5904;&#x7406;&#x5668;&#x4F7F;&#x7528;&#x54EA;&#x4E00;&#x79CD;&#x9884;&#x8BBE;&#x914D;&#x7F6E;&#x96C6;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;&#x987A;&#x5E8F;&#x6838;+&#x4EFF;&#x771F;&#x73AF;&#x5883;.</p>
-<h3 id="&#x914D;&#x7F6E;&#x96C6;&#x6D4B;&#x8BD5;&#x60C5;&#x51B5;">&#x914D;&#x7F6E;&#x96C6;&#x6D4B;&#x8BD5;&#x60C5;&#x51B5;</h3>
-<p>&#x987A;&#x5E8F;&#x6838;&#xFF1A;&#x53EF;&#x8FD0;&#x884C; AM &#x5E94;&#x7528;&#xFF0C;Linux Kernel&#xFF0C;Debian &#x7B49;</p>
-<p>&#x4E71;&#x5E8F;&#x6838;&#xFF1A;&#x53EF;&#x8FD0;&#x884C; AM &#x5E94;&#x7528;&#xFF0C;Linux Kernel &#x7B49;</p>
-<p>&#x5C0F;&#x6838;&#xFF08;32&#x4F4D;&#xFF09;&#xFF1A;&#x53EF;&#x8FD0;&#x884C; AM &#x5E94;&#x7528;&#x7B49;</p>
-
+                                <h1 id="csr-&#x5355;&#x5143;">CSR &#x5355;&#x5143;</h1>
+<p>CSR &#x5355;&#x5143;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x7279;&#x6743;&#x7EA7;&#x6307;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x4EE5;&#x53CA;&#x4F8B;&#x5916;/&#x4E2D;&#x65AD;&#x7684;&#x5904;&#x7406;. </p>
+<p>RISC-V &#x7279;&#x6743;&#x7EA7;&#x662F;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x5F88;&#x591A;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x8BFB;&#x5199;&#x4E0E;&#x63A7;&#x5236;&#xFF0C;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x8BBE;&#x8BA1;&#x96BE;&#x5EA6;&#x3001;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x6784;&#x9020;&#x4E86;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684; MaskedRegMap &#x7ED3;&#x6784;&#x6765;&#x4F18;&#x5316;&#x7279;&#x6743;&#x7EA7;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x8BFB;&#x5199;&#xFF0C;&#x5E76;&#x56F4;&#x7ED5;&#x8FD9;&#x4E00;&#x8BBE;&#x8BA1;&#x7ED9;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x7279;&#x6743;&#x7EA7;&#x63A7;&#x5236;&#x903B;&#x8F91;. &#x9488;&#x5BF9;&#x6BCF;&#x4E00;&#x4E2A; CSR &#x5BC4;&#x5B58;&#x5668;&#x6784;&#x9020; MaskedRegMap&#xFF0C;&#x5305;&#x62EC;&#x4E86;</p>
+<ul>
+<li>CSR &#x5BC4;&#x5B58;&#x5668;&#x7D22;&#x5F15;</li>
+<li>CSR &#x5BC4;&#x5B58;&#x5668;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;</li>
+<li>&#x8BFB;&#x3001;&#x5199;&#x63A9;&#x7801;</li>
+<li>&#x5199;&#x526F;&#x4F5C;&#x7528;&#xFF08;side effect&#xFF09;&#x51FD;&#x6570;</li>
+</ul>
+<p>&#x8FD9;&#x51E0;&#x4E2A;&#x7ECF;&#x8FC7;&#x51DD;&#x7EC3;&#x7684;&#x901A;&#x7528;&#x8BFB;&#x5199;&#x63A7;&#x5236;&#x57DF;&#xFF0C;&#x6BCF;&#x5F53;&#x63A5;&#x53D7;&#x5230;&#x8BFB;&#x5199;&#x8BF7;&#x6C42;&#x65F6;&#x5747;&#x4F1A;&#x6309;&#x7167;&#x8BBE;&#x5B9A;&#x505A;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x4FEE;&#x9970;&#x518D;&#x6700;&#x7EC8;&#x8BFB;&#x5199;&#x7269;&#x7406;&#x5BC4;&#x5B58;&#x5668;.</p>
+<p>&#x5728; CSR &#x5355;&#x5143;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5927;&#x91CF;&#x5730;&#x4F7F;&#x7528;&#x4E86; BoringUtils &#x8FD9;&#x4E00; Chisel &#x5185;&#x7F6E;&#x7C7B;&#x6765;&#x8FDB;&#x884C;&#x98DE;&#x7EBF;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5F88;&#x591A;&#x5176;&#x4ED6;&#x7684;&#x529F;&#x80FD;&#x90E8;&#x4EF6;&#x9700;&#x8981;&#x4ECE; CSR &#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x72B6;&#x6001;&#x6765;&#x5B9E;&#x73B0;&#x76F8;&#x5E94;&#x529F;&#x80FD;&#xFF08;&#x6BD4;&#x5982; LSU&#xFF0C;TLB &#x7B49;&#xFF09;.</p>
+<p>NutShell &#x9ED8;&#x8BA4;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x7684; CSR &#x5BC4;&#x5B58;&#x5668;. &#x8981;&#x8C03;&#x6574;&#x53EF;&#x4F7F;&#x7528;&#x7684; CSR &#x4EE5;&#x53CA;&#x8BBE;&#x7F6E; CSR &#x7684; &#x521D;&#x59CB;&#x503C;, &#x53C2;&#x89C1;&#x6E90;&#x7801;&#x4E2D;&#x7684; CSR.scala:</p>
+<pre><code># U &#x6A21;&#x5F0F;
+1. Ustatus    2. Uie        3. Utvec     4. Uscratch
+5. Uepc       6. Ucause     7. Utval     8. Uip
+# S &#x6A21;&#x5F0F;
+1. Sstatus    2. Sedeleg    3. Sideleg   4. Sie
+5. Stvec      6. Scounteren 7. Sscratch  8. Sepc
+9. Scause     10. Stval     11. Sip      12. Satp
+# M &#x6A21;&#x5F0F;
+1. Mvendorid  2. Marchid    3. Mimpid    4. Mhartid
+5. Mstatus    6. Mstatus    7. Misa      8. Medeleg 
+9. Mideleg    10. Mie       11. Mtvec    12. Mcounteren
+13. Mscratch  14. Mepc      15. Mcause   16. Mtval 
+29. Mip
+</code></pre>
                                 
                                 </section>
                             
@@ -480,12 +468,12 @@
 
             
                 
-                <a href="env.html" class="navigation navigation-prev " aria-label="Previous page: 配套生态">
+                <a href="lsu.md" class="navigation navigation-prev " aria-label="Previous page: 访存单元">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="debug.html" class="navigation navigation-next " aria-label="Next page: 调试指南">
+                <a href="bpu.html" class="navigation navigation-next " aria-label="Next page: 分支预测单元">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -496,7 +484,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"参数化配置","level":"6.2","depth":1,"next":{"title":"调试指南","level":"6.3","depth":1,"path":"其他/debug.md","ref":"其他/debug.md","articles":[]},"previous":{"title":"配套生态","level":"6.1","depth":1,"path":"其他/env.md","ref":"其他/env.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"其他/setting.md","mtime":"2020-07-18T08:02:12.014Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-24T10:40:12.786Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CSR单元","level":"4.2","depth":1,"next":{"title":"分支预测单元","level":"4.3","depth":1,"path":"功能部件/bpu.md","ref":"功能部件/bpu.md","articles":[]},"previous":{"title":"访存单元","level":"4.1","depth":1,"path":"功能部件/lsu.md","ref":"功能部件/lsu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"功能部件/csr.md","mtime":"2020-07-24T10:39:38.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-24T10:40:12.786Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

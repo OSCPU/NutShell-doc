@@ -1,0 +1,513 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>分支预测单元 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="cache.html" />
+    
+    
+    <link rel="prev" href="csr.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">介绍</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../介绍/introduction.html">
+            
+                <a href="../介绍/introduction.html">
+            
+                    
+                    NutShell (果壳) 处理器核
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../介绍/NutShell-tutorial.html">
+            
+                <a href="../介绍/NutShell-tutorial.html">
+            
+                    
+                    快速上手教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">流水线设计细节</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../流水线/ifu.html">
+            
+                <a href="../流水线/ifu.html">
+            
+                    
+                    取指级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../流水线/idu.html">
+            
+                <a href="../流水线/idu.html">
+            
+                    
+                    译码级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../流水线/isu.html">
+            
+                <a href="../流水线/isu.html">
+            
+                    
+                    发射级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../流水线/exu.html">
+            
+                <a href="../流水线/exu.html">
+            
+                    
+                    执行级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../流水线/wbu.html">
+            
+                <a href="../流水线/wbu.html">
+            
+                    
+                    写回级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">功能部件设计细节</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="lsu.html">
+            
+                <a href="lsu.html">
+            
+                    
+                    访存单元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="csr.html">
+            
+                <a href="csr.html">
+            
+                    
+                    CSR单元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.3" data-path="bpu.html">
+            
+                <a href="bpu.html">
+            
+                    
+                    分支预测单元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="cache.html">
+            
+                <a href="cache.html">
+            
+                    
+                    Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="tlb.html">
+            
+                <a href="tlb.html">
+            
+                    
+                    TLB
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">系统设计</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../系统/mem.html">
+            
+                <a href="../系统/mem.html">
+            
+                    
+                    访存系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../系统/peripheral.html">
+            
+                <a href="../系统/peripheral.html">
+            
+                    
+                    外设系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../系统/bus.html">
+            
+                <a href="../系统/bus.html">
+            
+                    
+                    总线
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../其他/env.html">
+            
+                <a href="../其他/env.html">
+            
+                    
+                    配套生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../其他/setting.html">
+            
+                <a href="../其他/setting.html">
+            
+                    
+                    参数化配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../其他/debug.html">
+            
+                <a href="../其他/debug.html">
+            
+                    
+                    调试指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >分支预测单元</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5355;&#x5143;">&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5355;&#x5143;</h1>
+<p>&#x5728;&#x51AF;&#x8BFA;&#x4F9D;&#x66FC;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4E2D;, &#x6307;&#x4EE4;&#x4F9B;&#x7ED9;&#x7684;&#x6548;&#x7387;&#x6781;&#x5927;&#x5730;&#x5F71;&#x54CD;&#x4E86;&#x5904;&#x7406;&#x5668;&#x7684;&#x6027;&#x80FD;. NutShell&#x5904;&#x7406;&#x5668;&#x6838;&#x5728;&#x53D6;&#x6307;&#x5355;&#x5143;&#x4E2D;&#x52A0;&#x5165;&#x4E86;&#x786C;&#x4EF6;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;, &#x7528;&#x4E8E;&#x5728;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x7684;&#x53D6;&#x6307;&#x9636;&#x6BB5;&#x9884;&#x6D4B;&#x51FA;&#x6307;&#x4EE4;&#x8DF3;&#x8F6C;&#x7684;&#x65B9;&#x5411;&#x548C;&#x76EE;&#x6807;&#x5730;&#x5740;, &#x5E76;&#x4ECE;&#x9884;&#x6D4B;&#x7684;&#x76EE;&#x6807;&#x5730;&#x5740;&#x5904;&#x7EE7;&#x7EED;&#x53D6;&#x6307;&#x4EE4;&#x6267;&#x884C;, &#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x51CF;&#x8F7B;&#x6307;&#x4EE4;&#x6D41;&#x6C34;&#x7EBF;&#x4E2D;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x5F15;&#x8D77;&#x7684;&#x963B;&#x585E;, &#x4ECE;&#x800C;&#x63D0;&#x9AD8;&#x5904;&#x7406;&#x5668;&#x7684;&#x6027;&#x80FD;.</p>
+<h2 id="next-line&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;">Next-Line&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;</h2>
+<p>NutShell&#x6838;&#x7684;&#x524D;&#x7AEF;&#x6BCF;&#x5468;&#x671F;&#x4F1A;&#x5728;&#x53D6;&#x6307;&#x524D;&#x4E00;&#x62CD;&#x8BBF;&#x95EE;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;, &#x5E76;&#x5728;&#x4E0B;&#x4E2A;&#x5468;&#x671F;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;. &#x5982;&#x679C;&#x9884;&#x6D4B;&#x6B63;&#x786E;, &#x6307;&#x4EE4;&#x6D41;&#x6C34;&#x7EBF;&#x5C31;&#x4E0D;&#x4F1A;&#x65AD;&#x6D41;. &#x6211;&#x4EEC;&#x91C7;&#x7528;&#x4E86;Next-Line&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;&#xFF08;Next-Line Predictor, NLP&#xFF09;, &#x901A;&#x8FC7;&#x7EFC;&#x5408;&#x8003;&#x8651;&#x5206;&#x652F;&#x76EE;&#x6807;&#x7F13;&#x51B2;&#x5668;&#xFF08;Branch Target Buffer, BTB&#xFF09;&#x3001;&#x6A21;&#x5F0F;&#x5386;&#x53F2;&#x8868;&#xFF08;Pattern History Table, PHT&#xFF09;&#x548C;&#x8FD4;&#x56DE;&#x5730;&#x5740;&#x6808;&#xFF08;Return Address Stack, RAS&#xFF09;&#x5BF9;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x8F6C;&#x79FB;&#x6307;&#x4EE4;&#x505A;&#x51FA;&#x5FEB;&#x901F;&#x7684;&#x9884;&#x6D4B;.</p>
+<p><img src="pic/BPU-NutShell.jpg" width="600"></p>
+<h3 id="&#x9884;&#x6D4B;&#x673A;&#x5236;">&#x9884;&#x6D4B;&#x673A;&#x5236;</h3>
+<p>BTB&#x4E2D;&#x7F13;&#x5B58;&#x4E86;&#x8DF3;&#x8F6C;&#x6307;&#x4EE4;&#x7684;&#x5730;&#x5740;&#x9AD8;&#x4F4D;&#x4FE1;&#x606F;&#x3001;&#x8DF3;&#x8F6C;&#x76EE;&#x6807;&#x3001;&#x6307;&#x4EE4;&#x7C7B;&#x578B;&#x7B49;&#x4FE1;&#x606F;. &#x5728;&#x505A;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x65F6;&#x4F1A;&#x7528;&#x53D6;&#x6307;PC&#x7D22;&#x5F15;BTB&#x8868;&#x9879;, &#x5982;&#x679C;PC&#x9AD8;&#x4F4D;&#x4E0E;&#x8BFB;&#x5230;&#x7684;BTB&#x8868;&#x9879;&#x7684;&#x6807;&#x7B7E;&#x5339;&#x914D;&#x5219;&#x8BA4;&#x4E3A;BTB&#x547D;&#x4E2D;, &#x518D;&#x6839;&#x636E;BTB&#x4E2D;&#x8BB0;&#x5F55;&#x7684;&#x6307;&#x4EE4;&#x7C7B;&#x578B;&#x5224;&#x65AD;&#x8DF3;&#x8F6C;&#x65B9;&#x5411;&#x548C;&#x8DF3;&#x8F6C;&#x76EE;&#x6807;. &#x5982;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x6761;&#x4EF6;&#x5206;&#x652F;&#x6307;&#x4EE4;, &#x5219;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x6A21;&#x5F0F;&#x5386;&#x53F2;&#x8868;&#xFF08;PHT&#xFF09;&#x6765;&#x5224;&#x65AD;&#x662F;&#x5426;&#x8DF3;&#x8F6C;; &#x5982;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x8FD4;&#x56DE;&#x6307;&#x4EE4;, &#x5219;&#x9009;&#x62E9;&#x8FD4;&#x56DE;&#x5730;&#x5740;&#x6808;&#xFF08;RAS&#xFF09;&#x7684;&#x6808;&#x9876;&#x5185;&#x5BB9;&#x4F5C;&#x4E3A;&#x8DF3;&#x8F6C;&#x76EE;&#x6807;; &#x5982;&#x679C;&#x7C7B;&#x578B;&#x4E3A;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x8DF3;&#x8F6C;&#x6307;&#x4EE4;, &#x5219;&#x9009;&#x62E9;BTB&#x4E2D;&#x8BB0;&#x5F55;&#x7684;&#x8DF3;&#x8F6C;&#x76EE;&#x6807;.</p>
+<p><img src="pic/BTB-NutShell.jpg" width="500"></p>
+<p>&#x5F53;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;&#x5224;&#x65AD;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x4E3A;&#x6761;&#x4EF6;&#x5206;&#x652F;&#x8DF3;&#x8F6C;&#x65F6;, &#x9700;&#x8981;&#x8BBF;&#x95EE;PHT&#x8FDB;&#x4E00;&#x6B65;&#x5BF9;&#x8DF3;&#x8F6C;&#x65B9;&#x5411;&#x505A;&#x51FA;&#x9884;&#x6D4B;. PHT&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4E24;&#x4F4D;&#x9971;&#x548C;&#x8BA1;&#x6570;&#x5668;, &#x8BA1;&#x6570;&#x5668;&#x7684;&#x5185;&#x5BB9;&#x6307;&#x793A;&#x4E86;&#x5F3A;&#x8DF3;&#x8F6C;&#x3001;&#x5F31;&#x8DF3;&#x8F6C;&#x3001;&#x5F31;&#x4E0D;&#x8DF3;&#x8F6C;&#x3001;&#x5F3A;&#x4E0D;&#x8DF3;&#x8F6C;&#x56DB;&#x79CD;&#x5206;&#x652F;&#x6307;&#x4EE4;&#x53EF;&#x80FD;&#x6240;&#x5904;&#x7684;&#x72B6;&#x6001;, &#x8BE5;&#x4E24;&#x4F4D;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x9AD8;&#x4F4D;&#x5219;&#x6307;&#x793A;&#x4E86;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x7684;&#x65B9;&#x5411;.</p>
+<p>&#x5728;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;&#x4E2D;, RAS&#x548C;PHT&#x7528;&#x540C;&#x6B65;&#x5199;&#x5F02;&#x6B65;&#x8BFB;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x5B9E;&#x73B0;, BTB&#x7531;&#x4E8E;&#x9762;&#x79EF;&#x8F83;&#x5927;&#x800C;&#x901A;&#x8FC7;&#x5FEB;&#x901F;SRAM&#x6765;&#x5B9E;&#x73B0;, &#x56E0;&#x6B64;&#x5728;&#x8BBF;&#x95EE;&#x524D;&#x8005;&#x65F6;&#x9700;&#x8981;&#x5C06;&#x53D6;&#x6307;PC&#x7F13;&#x5B58;&#x4E00;&#x62CD;. &#x7ED3;&#x5408;&#x4E09;&#x8005;&#x9884;&#x6D4B;&#x8DF3;&#x8F6C;&#x65B9;&#x5411;&#x548C;&#x8DF3;&#x8F6C;&#x76EE;&#x6807;&#x53EF;&#x4EE5;&#x5728;&#x4E24;&#x62CD;&#x4E4B;&#x5185;&#x5B8C;&#x6210;, &#x56E0;&#x6B64;&#x5982;&#x679C;&#x9884;&#x6D4B;&#x6B63;&#x786E;, &#x5C06;&#x4E0D;&#x4F1A;&#x6709;&#x53D6;&#x6307;&#x7A7A;&#x6CE1;&#x4EA7;&#x751F;.</p>
+<h3 id="&#x66F4;&#x65B0;&#x673A;&#x5236;">&#x66F4;&#x65B0;&#x673A;&#x5236;</h3>
+<p>&#x5728;&#x521D;&#x59CB;&#x5316;&#x9636;&#x6BB5;, BTB&#x6240;&#x6709;&#x8868;&#x9879;&#x90FD;&#x662F;&#x65E0;&#x6548;&#x7684;, &#x5F53;&#x8DF3;&#x8F6C;&#x6307;&#x4EE4;&#x7B2C;&#x4E00;&#x6B21;&#x88AB;&#x53D6;&#x51FA;&#x65F6;&#x90FD;&#x4F1A;&#x6309;&#x4E0D;&#x8DF3;&#x8F6C;&#x6765;&#x5904;&#x7406;. &#x540E;&#x7AEF;&#x7684;&#x6267;&#x884C;&#x5355;&#x5143;&#x53D1;&#x73B0;&#x6307;&#x4EE4;&#x8DF3;&#x8F6C;&#x76EE;&#x6807;&#x9519;&#x8BEF;&#x6216;&#x8005;&#x65B9;&#x5411;&#x9519;&#x8BEF;&#x65F6;&#x4F1A;&#x5237;&#x65B0;&#x6D41;&#x6C34;&#x7EBF;, &#x540C;&#x65F6;&#x66F4;&#x65B0;BTB&#x76F8;&#x5E94;&#x7684;&#x8868;&#x9879;. &#x5982;&#x679C;&#x53D6;&#x6307;PC&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x9879;&#x65E0;&#x6548;&#x6216;&#x5DF2;&#x88AB;&#x5360;&#x7528;, &#x5219;&#x91CD;&#x65B0;&#x5206;&#x914D;&#x8BE5;&#x8868;&#x9879;.</p>
+<p>&#x4E0E;&#x6B64;&#x540C;&#x65F6;, &#x540E;&#x7AEF;&#x6BCF;&#x6267;&#x884C;&#x4E00;&#x6761;&#x6761;&#x4EF6;&#x5206;&#x652F;&#x6307;&#x4EE4;, &#x90FD;&#x4F1A;&#x5C06;&#x6B63;&#x786E;&#x8DF3;&#x8F6C;&#x65B9;&#x5411;&#x548C;&#x5206;&#x652F;&#x76EE;&#x6807;&#x7B49;&#x4FE1;&#x606F;&#x8FD4;&#x56DE;&#x7ED9;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5355;&#x5143;, &#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;&#x4F1A;&#x66F4;&#x65B0;PHT, &#x6309;&#x7167;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x7684;&#x72B6;&#x6001;&#x673A;&#x66F4;&#x65B0;&#x4E24;&#x4F4D;&#x9971;&#x548C;&#x8BA1;&#x6570;&#x5668;.</p>
+<p><img src="pic/PHT-NutShell.jpg" width="500"> </p>
+<p>&#x540E;&#x7AEF;&#x6BCF;&#x6267;&#x884C;&#x4E00;&#x6761;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x6307;&#x4EE4;&#xFF08;call&#xFF09;&#x6216;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x6307;&#x4EE4;&#xFF08;ret&#xFF09;, &#x4E5F;&#x4F1A;&#x5C06;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x4F20;&#x7ED9;&#x5206;&#x652F;&#x9884;&#x6D4B;&#x5668;. &#x5982;&#x679C;&#x8BE5;&#x6307;&#x4EE4;&#x662F;call&#x6307;&#x4EE4;, &#x5219;&#x6839;&#x636E;&#x6307;&#x4EE4;&#x7684;&#x5BBD;&#x5EA6;&#xFF08;4&#x5B57;&#x8282;&#x6216;2&#x5B57;&#x8282;&#xFF09;&#x8BA1;&#x7B97;&#x8FD4;&#x56DE;&#x5730;&#x5740;&#x5E76;&#x5199;&#x5165;RAS&#x6808;&#x9876;; &#x5982;&#x679C;&#x8BE5;&#x6307;&#x4EE4;&#x662F;ret&#x6307;&#x4EE4;, &#x5219;&#x5C06;RAS&#x7684;&#x6808;&#x9876;&#x5F39;&#x51FA;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="csr.html" class="navigation navigation-prev " aria-label="Previous page: CSR单元">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="cache.html" class="navigation navigation-next " aria-label="Next page: Cache">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"分支预测单元","level":"4.3","depth":1,"next":{"title":"Cache","level":"4.4","depth":1,"path":"功能部件/cache.md","ref":"功能部件/cache.md","articles":[]},"previous":{"title":"CSR单元","level":"4.2","depth":1,"path":"功能部件/csr.md","ref":"功能部件/csr.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"功能部件/bpu.md","mtime":"2020-07-26T11:42:56.930Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-26T11:43:27.778Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

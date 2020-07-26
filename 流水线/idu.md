@@ -2,7 +2,7 @@
 
 译码 (Decode) 阶段接收指令对齐缓冲给出的指令进行译码。译码后的结果暂存到译码结果缓冲区中，等待进入处理器后端执行部分.
 
-译码部分主要使用了模式匹配方法，支持 I, M, A, C, Zicsr, Zifencei 等扩展，最终获得规则化的译码信息如下：
+译码部分主要使用了模式匹配方法，支持 I、M、A、C、Zicsr、Zifencei 等扩展，最终获得规则化的译码信息如下：
 
 ```
 class CtrlSignalIO extends NutCoreBundle {
@@ -28,3 +28,4 @@ class DataSrcIO extends NutCoreBundle {
 }
 ```
 
+目前译码部分没有使用压缩指令展开逻辑将压缩指令展开成普通指令. 压缩指令与普通指令一样被直接译码.

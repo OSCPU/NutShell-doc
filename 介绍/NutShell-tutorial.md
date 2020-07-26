@@ -29,7 +29,6 @@
   ├── main/scala
   │    ├── bus         # 总线相关
   │    ├── device      # 输入输出设备相关
-  │    ├── gpu         # GPU相关
   │    ├── nutcore     # 核心相关
   │    ├── sim         # 仿真相关
   │    ├── system      # 外围系统
@@ -85,26 +84,28 @@ sudo apt-get install verilator
 
 NEMU (NJU Emulator) 是一个简单但完整的全系统模拟器, 目前支持 x86, mips32, riscv32, riscv64 指令集. 在一生一芯项目中, NEMU 作为一个重要的基础设施, 被用来与处理器核作对比仿真验证.
 
-* NEMU 项目的完整源码在 GitLab 上, 它的运行过程和相关概念请参考南京大学计算机系统基础课程的[PA0/PA1部分](https://nju-projectn.github.io/ics-pa-gitbook/ics2019/PA0.html).
+* NEMU 项目的完整源码由于课程设计需求暂不公开, 不过我们提供了一份针对 NutShell (rv64) 编译好的二进制版本在[此处](https://github.com/OSCPU/nemu), 它的运行过程和相关概念请参考南京大学计算机系统基础课程的[PA0/PA1部分](https://nju-projectn.github.io/ics-pa-gitbook/ics2019/PA0.html).
 * 处理器核中与对比验证相关的代码在 src/test/csrc/ 下的 difftest.cpp, difftest.h, emu.h 等文件中, 主要对比的是通用寄存器和CSR寄存器的值.
 
 ### AM
 
 AM (Abstract Machine) 是一个向程序提供运行时环境的包装库, 它提供了一个面向裸金属的运行时环境, 把程序与体系结构进行了解耦. 我们只要在 AM 的框架下编写好程序, 就能方便地运行在 NEMU 和 Nutshel 之上. AM 在一生一芯项目中被用来包装一系列测试程序从而验证核心的正确性.
 
-* AM 项目的完整源码在 GitLab 上, 它的安装运行过程和相关概念请参考南京大学计算机系统基础课程的[PA2部分](https://nju-projectn.github.io/ics-pa-gitbook/ics2019/2.3.html).
+* AM 项目的完整源码由于课程设计需求暂不公开, 我们也提供了一份 NutShell 特供版本在[此处](https://github.com/OSCPU/nexus-am). 它的安装运行过程和相关概念请参考南京大学计算机系统基础课程的[PA2部分](https://nju-projectn.github.io/ics-pa-gitbook/ics2019/2.3.html).
 
 ### RISCV-PK & RISCV-LINUX
 
 RISCV-PK (The RISC-V Proxy Kernel) 是一个轻量的 RISCV 运行时环境, 它能够将搭载程序的 I/O 系统请求代理到主机来完成. 我们项目中没有这样的需求, 而是主要使用了其中的 BBL (Berkeley Boot Loader) 部分, 它为 Linux 内核的运行提供预先准备, 包括注册 M mode 中断处理请求, 读取并解析设备树, 设置相应 CSR 寄存器值等等. 当 BBL 运行结束, 它就会将控制器正式交给内核.
 
-在 GitLab 上面的 RISCV-PK 项目 Make 过程中, 会自动下载 RISCV-LINUX 这个项目工程, 这里面包含了一个最精简的 Linux 内核, ELF文件仅有1.4MB大小, 初始 init 为一个输出 Hello World 的小程序. 
+在 OSCPU 上面的 RISCV-PK 项目 Make 过程中, 会自动下载 RISCV-LINUX 这个项目工程, 这里面包含了一个最精简的 Linux 内核, ELF文件仅有1.4MB大小, 初始 init 为一个输出 Hello World 的小程序. 
 
 
 
 ## 仿真运行流程
 
-该部分我们将以 Microbench 和 Linux 内核作为两个例子来说明如何进行处理器核的仿真运行.
+请参考[此处](https://github.com/OSCPU/NutShell#run-programs-by-simulation)的说明来使用我们预编译好的映像文件进行处理器核的仿真运行.
+
+如果要手动编译运行映像，我们以 Microbench 和 Linux 内核作为两个例子分别进行说明.
 
 ### Microbench
 
@@ -174,9 +175,3 @@ Microbench 是一个建立在 AM 之上的基准测试程序, 位置在 nexus-am
   ```
 
   与之前类似, 该项目会生成一个内存映像二进制文件, 但是运行在 NutShell 的仿真平台之上, 最终看到终端打印出来 Hello World 代表启动成功.
-
-
-
-## FAQ
-
-TODO

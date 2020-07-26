@@ -105,7 +105,7 @@ RISCV-PK (The RISC-V Proxy Kernel) 是一个轻量的 RISCV 运行时环境, 它
 
 请参考[此处](https://github.com/OSCPU/NutShell#run-programs-by-simulation)的说明来使用我们预编译好的映像文件进行处理器核的仿真运行.
 
-如果要手动编译运行映像，我们以 Microbench 和 Linux 内核作为两个例子分别进行说明.
+如果要手动编译运行映像, 我们以 Microbench 和 Linux 内核作为两个例子分别进行说明.
 
 ### Microbench
 
@@ -125,7 +125,7 @@ Microbench 是一个建立在 AM 之上的基准测试程序, 位置在 nexus-am
 
   该命令首先会使用 AM 运行时框架编译 Microbench 源代码, 形成一个内存映像二进制文件 (.bin), 然后让该文件载入进 NEMU 模拟器的内存中运行, 最后可以在终端中看到相应的输出以及最后的 Pass 字样. 
 
-  其中, ARCH 指定 AM 的编译条件, `-` 之前部分指示指令集，`-` 之后部分指示运行平台; mainargs 指定目标程序的传入参数, 在 Microbench 中可以传入 "test", "train", "ref" 来设定测试规模.
+  其中, ARCH 指定 AM 的编译条件, `-` 之前部分指示指令集, `-` 之后部分指示运行平台; mainargs 指定目标程序的传入参数, 在 Microbench 中可以传入 "test", "train", "ref" 来设定测试规模.
 
 * 进入 nexus-am/apps/microbench/, 执行
 

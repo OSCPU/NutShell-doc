@@ -34,4 +34,4 @@ Cache 的控制逻辑是一个三级流水线的结构. 阶段1(Stage 1) 接收�
 
 ### L2 Cache预取器
 
-TODO
+NutCore处理器在L2 Cache中加入了Next-line预取器。当触发L1 Cache miss时，L1 Cache会向L2 Cache发送Burst请求，L2预取器每收到一个Burst请求都会在下一拍向L2 Cache发送Prefetch请求。Prefetch请求和读请求在Cache中的控制逻辑基本相同，只是最后不会响应或返回数据。

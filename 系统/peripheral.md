@@ -10,14 +10,16 @@
 
 ![](peripheral-real.svg)
 
-----
 ## NutShell SoC
 
 NutShell SoC主要由NutCore处理器以及各个外设IP核, 以及SDRAM控制器组成. NutCore提供了对外的AXI-MEM接口（AXI4协议）, 与SDRAM控制器连接. 而MMIO空间则是通过AXI-MMIO（AXI-Lite协议）接口, 通过信号转换为APB总线信号. APB信号选择器会根据访问的地址空间将NutShell的访问信号（master）传递给不同的外设控制器（slave）, 达到对MMIO空间进行访问的目的.   
 
 各个外设IP会将APB信号转换为内部控制器的信号, 来进行对外设IP内部寄存器的读写. 而ETHMAC以及SDC两种外设还需要实现对主存进行读写, 因此这两个外设的信号能作为APB master, 转换为AXI-frontend(AXI4协议),接入到NutCore. 这个信号在NutCore内部会转换为一个对Data Cache的SimpleBus访存请求. 
 
+
+
 ## 外设
+
 我们的外设IP来源于opencore这样的开源网站
 
 * UART（Universal Asynchronous Receiver/Transmitter）, 用于NutCore对串口的输入输出. 

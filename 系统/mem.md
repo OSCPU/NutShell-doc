@@ -12,7 +12,7 @@ NutShell 的访存模型示意图如下所示：
 
 ### 内存一致性
 
-NutShell 遵照 [TODO] xxxx 内存一致性模型. 从维护内存一致性的角度出发, 我们将 TLB 与 DMA 接入到 DCache 中, 而不是后面的内存之前的 CrossBar.
+NutShell 满足缓存一致性. 从维护内存一致性的角度出发, 我们将 TLB 与 DMA 接入到 DCache 中, 而不是后面的内存之前的 CrossBar.
 
 ### 访存总线
 

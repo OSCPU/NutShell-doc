@@ -2,6 +2,8 @@
 
 该 repo 和 github.io 绑定, 域名为 https://oscpu.github.io/NutShell-doc/, 欢迎访问！
 
+备用部署域名：https://oscpu.gitbook.io/nutshell
+
 Gitbook 构建工作目前已移交给 Github-CI 完成; 文档改写完成后, 本地可运行 `gitbook serve ./ ./building` 查看的生成网页, 但请不要把 ./building/ push 到主线上.
 
 

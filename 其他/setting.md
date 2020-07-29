@@ -4,7 +4,7 @@ NutShell 支持参数化配置, 目前经过验证的核心配置集有小核、
 
 
 
-<img src="setting.svg" width="300" />
+<img src="setting.svg" width="400" />
 
 其中, 顺序核是本文档主要针对介绍的, 小核以顺序核为基础进行裁剪；而乱序核部分则是王华强同学的毕业设计内容, 现已融入 NutShell 配置框架中.
 

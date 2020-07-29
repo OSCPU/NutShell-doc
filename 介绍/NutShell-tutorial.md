@@ -12,13 +12,11 @@
 .
 ├── debug/             # 处理器核测试脚本
 ├── fpga/              # 用于FPGA平台调试运行的相关文件
-├── doc/               # 项目文档
 ├── project/           # 构建SBT项目的相关配置文件
 ├── src/               # 处理器核源代码
 ├── script/            # 其他脚本文件
 ├── tool/              # 其他工具
-├── Makefile           # Makefile
-├── devlog.md          # 开发日志
+├── Makefile           
 └── README.md          # 项目介绍
 ```
 
@@ -32,7 +30,7 @@
   │    ├── nutcore     # 核心相关
   │    ├── sim         # 仿真相关
   │    ├── system      # 外围系统
-  │    ├── top         # 项目顶层文件
+  │    ├── top         # 项目顶层文件及配置文件
   │    └── utils       # 工具相关
   └── test
        ├── csrc        # C++测试文件, 主要用于Verilator仿真项目构建
@@ -43,6 +41,8 @@
 
 
 ## 准备工作
+
+推荐在 Ubuntu 18.04 或者 Debian 10 以上的 Linux 发行版环境中运行本项目.
 
 ### 安装 Mill
 
@@ -97,21 +97,23 @@ AM (Abstract Machine) 是一个向程序提供运行时环境的包装库, 它�
 
 RISCV-PK (The RISC-V Proxy Kernel) 是一个轻量的 RISCV 运行时环境, 它能够将搭载程序的 I/O 系统请求代理到主机来完成. 我们项目中没有这样的需求, 而是主要使用了其中的 BBL (Berkeley Boot Loader) 部分, 它为 Linux 内核的运行提供预先准备, 包括注册 M mode 中断处理请求, 读取并解析设备树, 设置相应 CSR 寄存器值等等. 当 BBL 运行结束, 它就会将控制器正式交给内核.
 
-在 OSCPU 上面的 RISCV-PK 项目 Make 过程中, 会自动下载 RISCV-LINUX 这个项目工程, 这里面包含了一个最精简的 Linux 内核, ELF文件仅有1.4MB大小, 初始 init 为一个输出 Hello World 的小程序. 
+OSCPU 项目组中的 riscv-linux 工程内置了 BBL, 也包含了一个最精简的 Linux 内核, ELF文件仅有1.4MB 大小, 初始 init 为一个输出 Hello World 的小程序. 
 
 
 
 ## 仿真运行流程
 
-请参考[此处](https://github.com/OSCPU/NutShell#run-programs-by-simulation)的说明来使用我们预编译好的映像文件进行处理器核的仿真运行.
+请参考[此处](https://github.com/OSCPU/NutShell#run-programs-by-simulation)的说明来使用我们预编译好的映像文件进行处理器核的仿真运行. (推荐)
 
-如果要手动编译运行映像, 我们以 Microbench 和 Linux 内核作为两个例子分别进行说明.
+如果要手动编译运行映像, 我们以 Microbench 作为例子进行说明.
+
+ <!--我们以 Microbench 和 Linux 内核作为两个例子分别进行说明.-->
 
 ### Microbench
 
 Microbench 是一个建立在 AM 之上的基准测试程序, 位置在 nexus-am/apps/microbench/.
 
-* 准备好 NutShell, NEMU, AM 这三个项目, 注意使用 git 切换到相应的分支, 做好 NutShell 的 Setting 工作
+* 准备好 NutShell, NEMU, AM 这三个项目, 做好 NutShell 的 Setting 工作
 * 设置三个环境变量
   * `NEMU_HOME` = NEMU 项目的**绝对路径**
   * `NUTSHELL_HOME` = NutShell 项目的**绝对路径**
@@ -137,12 +139,14 @@ Microbench 是一个建立在 AM 之上的基准测试程序, 位置在 nexus-am
 
   值得注意的是, 第一次运行该命令会从头开始 build NutShell 项目, 通常第一次 build 的时间会非常漫长, 这是因为 Mill 工具会下载依赖的 Scala/Java 包, 这些包在国内的网络环境中下载速度很慢. 一旦第一次构建成功后, 后续就不会重复下载了, build 速度会快很多.
 
-
+<!---
 
 ### Linux Kernel
 
-* 准备好 NutShell, NEMU 这两个项目, 注意使用 git 切换到相应的分支, 做好 NutShell 的 Setting 工作
+* 准备好 NutShell, NEMU, RISCV-PK 这三个项目, 做好 NutShell 的 Setting 工作
+
 * 设置两个环境变量
+
   * `NEMU_HOME` = NEMU 项目的**绝对路径**
   * `NUTSHELL_HOME` = NutShell 项目的**绝对路径**
 
@@ -175,3 +179,5 @@ Microbench 是一个建立在 AM 之上的基准测试程序, 位置在 nexus-am
   ```
 
   与之前类似, 该项目会生成一个内存映像二进制文件, 但是运行在 NutShell 的仿真平台之上, 最终看到终端打印出来 Hello World 代表启动成功.
+
+-->

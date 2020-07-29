@@ -10,23 +10,22 @@
 
 ![](peripheral-real.svg)
 
-## NutShell SoC
-
-NutShell SoC主要由NutCore处理器以及各个外设IP核, 以及SDRAM控制器组成. NutCore提供了对外的AXI-MEM接口（AXI4协议）, 与SDRAM控制器连接. 而MMIO空间则是通过AXI-MMIO（AXI-Lite协议）接口, 通过信号转换为APB总线信号. APB信号选择器会根据访问的地址空间将NutShell的访问信号（master）传递给不同的外设控制器（slave）, 达到对MMIO空间进行访问的目的.   
-
-各个外设IP会将APB信号转换为内部控制器的信号, 来进行对外设IP内部寄存器的读写. 而ETHMAC以及SDC两种外设还需要实现对主存进行读写, 因此这两个外设的信号能作为APB master, 转换为AXI-frontend(AXI4协议),接入到NutCore. 这个信号在NutCore内部会转换为一个对Data Cache的SimpleBus访存请求. 
 
 
+### NutShell SoC
 
-## 外设
+NutShell SoC 主要由 NutCore 处理器核, 各个外设 IP 核以及 SDRAM 控制器组成. NutCore 提供了对外的 AXI-MEM 接口 (AXI4 协议), 与 SDRAM 控制器连接. 而 MMIO 地址空间访问则是通过 AXI-MMIO (AXI-Lite协议) 接口, 首先信号会被转换为 APB 协议总线信号. APB 信号选择器会根据访问的地址空间将 NutShell 的访问信号 (master) 传递给不同的外设控制器 (slave), 达到对 MMIO 空间进行访问的目的.   
 
-我们的外设IP来源于opencore这样的开源网站
-
-* UART（Universal Asynchronous Receiver/Transmitter）, 用于NutCore对串口的输入输出. 
-* GPIO（General-purpose input/output）,我们使用4个GPIO输入端口作为我们的中断输入端口, 连接到各个外设IP的中断信号. 当外设产生中断时, 会使能GPIO中断并向NutCore处理器发送中断. 
-* SPI_Flash 我们使用SPI（Serial Peripheral Interface）信号端口的Flash来作为我们的ROM, NutCore会从SPI_Flash中读取第一条指令. 
-* ETHMAC 以太网控制器, SoC通过Tx端发送以太网帧. 而当Rx接收到数据时, 会作为APB master向NutCore发送AXI-fronten写请求写入DMA接收地址. 
-* SDC 已经流片的板子上我们实现了SDHC(Secure Digital High Capacity)以及SPI两种接口的SDC controller
+各个外设 IP 会将 APB 信号转换为内部控制器的信号, 来进行对外设 IP 内部寄存器的读写. 而 ETHMAC 以及 SDC 两种外设还需要实现对主存进行读写, 因此这两个外设的信号也同时能作为 APB master, 转换为 AXI-frontend (AXI4协议), 接入到 NutCore. 这个信号在 NutCore 内部会转换为一个对 Data Cache 的 SimpleBus 访存请求. 
 
 
 
+### 外设
+
+我们的外设 IP 主要来源于以 OpenCore 为代表的开源网站. 以下是对各个外设的详细介绍: 
+
+* UART (Universal Asynchronous Receiver/Transmitter), 用于NutCore对串口的输入输出. 
+* GPIO (General-Purpose Input/Output), 我们使用 4 个 GPIO 输入端口作为我们的中断输入端口, 连接到各个外设 IP 的中断信号. 当外设产生中断时, 会使能 GPIO 中断并向 NutCore 处理器发送中断. 
+* SPI_Flash, 我们使用 SPI (Serial Peripheral Interface) 信号端口的 Flash 来作为我们的 ROM, NutCore 会从 SPI_Flash 中读取第一条指令. 
+* ETHMAC, 以太网控制器, SoC 通过 Tx 端发送以太网帧. 而当 Rx 接收到数据时, 会作为 APB master 向 NutCore 发送 AXI-frontend 写请求写入 DMA 接收地址. 
+* SDC (Secure Digital Card), 已经流片的板子上我们实现了 SDHC (Secure Digital High Capacity) 以及 SPI 两种接口的 SDC controller

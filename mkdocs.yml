@@ -1,0 +1,53 @@
+# doc for pdf plug-in: https://pypi.org/project/mkdocs-with-pdf/
+# to build bdf, run: `ENABLE_PDF_EXPORT=1 mkdocs serve`
+
+site_name: NutShell微架构文档
+
+# readthedocs theme does not work well with pdf export, use material 
+# ref: https://squidfunk.github.io/mkdocs-material/
+theme:
+  name: material
+
+# draw.io generated svg does not work well with pdf export plug-in
+# (or, it does not work well with anything other than a browser...) 
+# see: https://inkscape.org/forums/other/inkscape-viewer-does-not-support-full-svg-11/
+# these svg files has to be converted to png to be randered correctly in pdf
+
+plugins:
+    - with-pdf:
+        author: NutShell Team
+        copyright: NutShell Team, 2020
+        cover: true
+        cover_title: NutShell 微架构文档
+        cover_subtitle: 顺序核微架构
+        # cover_logo: figs/LOGO.png
+        toc_level: 3
+        enabled_if_env: ENABLE_PDF_EXPORT
+        output_path: /tmp/doc/nutshell.pdf
+        ordered_chapter_level: 3
+
+nav:
+    - 简介:
+      - NutShell (果壳) 处理器核: 介绍/introduction.md
+      - 快速上手教程: 介绍/NutShell-tutorial.md
+    - 流水线设计细节:
+      - 取指级: 流水线/ifu.md
+      - 译码级: 流水线/idu.md
+      - 发射级: 流水线/isu.md
+      - 执行级: 流水线/exu.md
+      - 写回级: 流水线/wbu.md
+    - 功能部件设计细节:
+      - 访存单元: 功能部件/lsu.md
+      - CSR单元: 功能部件/csr.md
+      - 分支预测单元: 功能部件/bpu.md
+      - Cache: 功能部件/cache.md
+      - TLB: 功能部件/tlb.md
+    - 系统设计:
+      - 访存系统: 系统/mem.md
+      - 外设系统: 系统/peripheral.md
+      - 总线: 系统/bus.md
+    - 其他:
+      - 配套生态: 其他/env.md
+      - 参数化配置: 其他/setting.md
+      - 调试指南: 其他/debug.md
+

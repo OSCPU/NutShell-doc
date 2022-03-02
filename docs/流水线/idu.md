@@ -22,7 +22,7 @@ class CtrlSignalIO extends NutCoreBundle {
 }
 
 class DataSrcIO extends NutCoreBundle {
-  val src1 = Output(UInt(XLEN.W))
+  val src1 = Output(UInt(XLEN.W))readthedocs
   val src2 = Output(UInt(XLEN.W))
   val imm  = Output(UInt(XLEN.W))
 }

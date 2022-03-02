@@ -2,17 +2,17 @@
 
 本节主要介绍 NutShell 所使用的外设系统. 由于实现的原因, 我们在仿真和流片版本使用了不同的外设系统, 其中仿真外设示意图如下：
 
-![](mmio.svg)
+![](mmio.png)
 
 
 
 流片外设示意图如下：
 
-![](peripheral-real.svg)
+![](peripheral-real.png)
 
 
 
-### NutShell SoC
+## NutShell SoC
 
 NutShell SoC 主要由 NutCore 处理器核, 各个外设 IP 核以及 SDRAM 控制器组成. NutCore 提供了对外的 AXI-MEM 接口 (AXI4 协议), 与 SDRAM 控制器连接. 而 MMIO 地址空间访问则是通过 AXI-MMIO (AXI-Lite协议) 接口, 首先信号会被转换为 APB 协议总线信号. APB 信号选择器会根据访问的地址空间将 NutShell 的访问信号 (master) 传递给不同的外设控制器 (slave), 达到对 MMIO 空间进行访问的目的.   
 
@@ -20,7 +20,7 @@ NutShell SoC 主要由 NutCore 处理器核, 各个外设 IP 核以及 SDRAM 控
 
 
 
-### 外设
+## 外设
 
 我们的外设 IP 主要来源于以 OpenCore 为代表的开源网站. 以下是对各个外设的详细介绍: 
 

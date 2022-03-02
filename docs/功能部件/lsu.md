@@ -6,6 +6,6 @@
 
 目前的访存状态机如下图所示:
 
-<img src="pic/MEMFSM-NutShell.png" width="600" />
+![](pic/MEMFSM-NutShell.png)
 
 与一致性相关的访存细节, 参见[访存系统](../系统/mem.md)部分.

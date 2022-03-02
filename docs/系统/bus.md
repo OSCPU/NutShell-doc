@@ -31,8 +31,6 @@ SimpleBus的id通道在NutShell顺序核的设计中并没有被使用.
 
 我们也内置了基于 SimpleBusUC 的各类 CrossBar, 经过了一定的验证, 方便开发者进行复用.
 
-
-
 ## SimpleBusC
 
 SimpleBusC 在 SimpleBusUC 的基础上增加了与一致性相关的功能, 用于 Cache 的访存通路中, 本质上是由两个 SimpleBusUC 组合而成的：
@@ -45,7 +43,6 @@ class SimpleBusC(val userBits: Int = 0) extends SimpleBusBundle {
 ```
 
 其中 mem 是访存通道, coh 是一致性维护通道.
-
 
 
 ## 与 AXI4 的转换

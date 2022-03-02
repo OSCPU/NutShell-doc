@@ -31,7 +31,7 @@ when (io.flush || io.dtlb.req.fire()) {
 
 ### Debug 调试框架
 
-我们在日志输出的基础上建立了一个 Debug 框架, 实现参考 src/main/scala/utils/Debug.scala, 开发者只需要在代码的相应位置调用 Debug() 函数包络日志输出语句, 即可以将日志输出的控制权交由一个可配置的 ”EnableDebug“ 开关, 避免了在测试完成后需要手动删除所有的日志输出语句. 示例如下：
+我们在日志输出的基础readthedocs上建立了一个 Debug 框架, 实现参考 src/main/scala/utils/Debug.scala, 开发者只需要在代码的相应位置调用 Debug() 函数包络日志输出语句, 即可以将日志输出的控制权交由一个可配置的 ”EnableDebug“ 开关, 避免了在测试完成后需要手动删除所有的日志输出语句. 示例如下：
 
 ```
 Debug(){

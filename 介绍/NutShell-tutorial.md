@@ -84,8 +84,7 @@ sudo apt-get install verilator
 
 NEMU (NJU Emulator) 是一个简单但完整的全系统模拟器, 目前支持 x86, mips32, riscv32, riscv64 指令集. 在一生一芯项目中, NEMU 作为一个重要的基础设施, 被用来与处理器核作对比仿真验证.
 
-* NEMU 项目的完整源码由于课程设计需求暂不公开, 不过我们提供了一份针对 NutShell (rv64) 编译好的二进制版本在[此处](https://github.com/OSCPU/nemu), 它的运行过程和相关概念请参考南京大学计算机系统基础课程的[PA0/PA1部分](https://nju-projectn.github.io/ics-pa-gitbook/ics2019/PA0.html).
-* 处理器核中与对比验证相关的代码在 src/test/csrc/ 下的 difftest.cpp, difftest.h, emu.h 等文件中, 主要对比的是通用寄存器和CSR寄存器的值.
+NEMU 的源代码参见[这里](https://github.com/OpenXiangShan/NEMU). 
 
 ### AM
 

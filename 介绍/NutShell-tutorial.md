@@ -46,7 +46,7 @@
 
 ### 安装 Mill
 
-* 请参考[该指南的Manual部分](https://www.lihaoyi.com/mill/#manual)
+* 请参考[该指南的Manual部分](https://com-lihaoyi.github.io/mill/mill/Intro_to_Mill.html)
 
 ### 安装 GNU RISCV 工具链
 
